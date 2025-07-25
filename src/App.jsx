@@ -17,7 +17,7 @@ function App() {
     return newErrors;
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const newErrors = validate();
     if (Object.keys(newErrors).length > 0) {
@@ -54,12 +54,16 @@ function App() {
         onChange={(e) => setResume(e.target.value)}
         rows={10}
       />
+      {errors.resume && <p className="error">{errors.resume}</p>}
+
       <input
         type="text"
         placeholder="Target role (e.g., Frontend Developer)"
         value={role}
         onChange={(e) => setRole(e.target.value)}
       />
+      {errors.role && <p className="error">{errors.role}</p>}
+
       <button onClick={handleSubmit} disabled={loading}>
         {loading ? "Analyzing..." : "Analyze Resume"}
       </button>

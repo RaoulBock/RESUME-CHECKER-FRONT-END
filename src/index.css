@@ -1,54 +1,111 @@
 /* src/index.css */
-
-body {
-  font-family: sans-serif;
-  background-color: #f5f5f5;
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f0f4ff, #e6f0ff);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 10px;
+}
+
 .container {
+  background-color: #ffffff;
   max-width: 700px;
-  margin: 50px auto;
-  padding: 20px;
-  background: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  width: 100%;
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.container h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #1f2d5a;
 }
 
 textarea,
 input {
   width: 100%;
-  margin-bottom: 15px;
-  padding: 10px;
+  padding: 14px 16px;
+  margin-bottom: 20px;
   font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  background-color: #fafafa;
+  transition: border 0.2s ease;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+  border-color: #4677f5;
 }
 
 button {
-  padding: 10px 20px;
+  width: 100%;
+  padding: 14px;
   font-size: 1rem;
-  background-color: #007bff;
+  font-weight: 600;
+  background-color: #4677f5;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background-color: #3457d5;
 }
 
 button:disabled {
-  background-color: #6c757d;
+  background-color: #b0c5ff;
+  cursor: not-allowed;
 }
 
 .feedback {
   margin-top: 30px;
-  background: #f0f0f0;
-  padding: 15px;
-  border-radius: 5px;
+  background: #f7f9ff;
+  border-left: 4px solid #4677f5;
+  padding: 20px;
+  border-radius: 12px;
   white-space: pre-wrap;
+  font-size: 0.95rem;
+  color: #333;
 }
+
 .error {
-  color: red;
+  color: #e74c3c;
   font-size: 0.9rem;
-  margin: -10px 0 10px 0;
+  margin: -15px 0 15px 0;
+}
+
+@media (max-width: 600px) {
+  .container {
+    margin: 20px 10px;
+    padding: 15px;
+  }
+  h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  button {
+    font-size: 0.95rem;
+  }
+
+  textarea,
+  input {
+    font-size: 0.95rem;
+  }
 }
