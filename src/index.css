@@ -164,3 +164,84 @@ button:disabled {
 .footer a:hover {
   color: #007acc;
 }
+
+.search-btn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #1f2d5a;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  animation: fadeIn 0.5s ease;
+}
+
+.search-btn:hover {
+  background-color: #132041;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 30, 30, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.5s ease;
+  z-index: 999;
+}
+
+.modal-content {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  padding: 60px 40px;
+  box-shadow: none;
+  animation: slideUp 0.6s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+  overflow-y: auto;
+}
+
+.modal-content h2 {
+  font-size: 2.4rem;
+  color: #1f2d5a;
+  text-align: center;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 800px;
+  padding: 16px 20px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f7f7f7;
+}
+.exit-btn {
+  margin-top: 20px;
+  padding: 14px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.exit-btn:hover {
+  background-color: #c0392b;
+}

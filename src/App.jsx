@@ -8,6 +8,8 @@ function App() {
   const [feedback, setFeedback] = useState("");
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [jobSearch, setJobSearch] = useState("");
 
   const validate = () => {
     const newErrors = {};
@@ -67,12 +69,35 @@ function App() {
         {loading ? "Analyzing..." : "Analyze Resume"}
       </button>
 
+      <button className="search-btn" onClick={() => setIsModalOpen(true)}>
+        Search for job
+      </button>
+
       {feedback && (
         <div className="feedback">
           <h2>Feedback</h2>
           <pre>{feedback}</pre>
         </div>
       )}
+
+      {isModalOpen && (
+        <div className="modal-overlay" onClick={() => setIsModalOpen(false)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <h2>Search for your next job.</h2>
+            <input
+              type="text"
+              className="search-input"
+              placeholder="Search jobs..."
+              value={jobSearch}
+              onChange={(e) => setJobSearch(e.target.value)}
+            />
+            <button className="exit-btn" onClick={() => setIsModalOpen(false)}>
+              Exit
+            </button>
+          </div>
+        </div>
+      )}
+
       <footer className="footer">
         <p>
           Made with ❤ by{" "}
