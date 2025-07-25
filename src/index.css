@@ -109,3 +109,58 @@ button:disabled {
     font-size: 0.95rem;
   }
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation: Slide In Card */
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Apply to container */
+.container {
+  animation: slideUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+/* Apply to feedback box */
+.feedback {
+  animation: fadeIn 0.5s ease-in-out;
+}
+.footer {
+  margin-top: 40px;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #777;
+  background-color: #f8f8f8;
+  border-top: 1px solid #e0e0e0;
+  animation: fadeIn 1.2s ease-in;
+}
+
+.footer a {
+  color: #111;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #007acc;
+}

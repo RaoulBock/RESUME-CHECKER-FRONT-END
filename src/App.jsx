@@ -74,6 +74,18 @@ function App() {
           <pre>{feedback}</pre>
         </div>
       )}
+      <footer className="footer">
+        <p>
+          Made with ❤ by{" "}
+          <a
+            href="https://github.com/raoulbock"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            @raoulbock
+          </a>
+        </p>
+      </footer>
     </div>
   );
 }
