@@ -8,13 +8,24 @@ function App() {
   const [role, setRole] = useState("");
   const [feedback, setFeedback] = useState("");
   const [loading, setLoading] = useState(false);
+  const [errors, setErrors] = useState({});
+
+  const validate = () => {
+    const newErrors = {};
+    if (!resume.trim()) newErrors.resume = "Resume is required.";
+    if (!role.trim()) newErrors.role = "Target role is required.";
+    return newErrors;
+  };
 
   const handleSubmit = async () => {
-    if (!resume || !role) {
-      alert("Please fill out both fields.");
+    e.preventDefault();
+    const newErrors = validate();
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
       return;
     }
 
+    setErrors({});
     setLoading(true);
     setFeedback("");
 

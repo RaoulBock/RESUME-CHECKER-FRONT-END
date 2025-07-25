@@ -47,3 +47,8 @@ button:disabled {
   border-radius: 5px;
   white-space: pre-wrap;
 }
+.error {
+  color: red;
+  font-size: 0.9rem;
+  margin: -10px 0 10px 0;
+}
