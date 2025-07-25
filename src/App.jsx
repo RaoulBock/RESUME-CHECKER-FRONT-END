@@ -83,14 +83,16 @@ function App() {
       {isModalOpen && (
         <div className="modal-overlay" onClick={() => setIsModalOpen(false)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <h2>Search for your next job.</h2>
-            <input
-              type="text"
-              className="search-input"
-              placeholder="Search jobs..."
-              value={jobSearch}
-              onChange={(e) => setJobSearch(e.target.value)}
-            />
+            <div>
+              <h2>Search for your next job.</h2>
+              <input
+                type="text"
+                className="search-input"
+                placeholder="Search jobs..."
+                value={jobSearch}
+                onChange={(e) => setJobSearch(e.target.value)}
+              />
+            </div>
             <button className="exit-btn" onClick={() => setIsModalOpen(false)}>
               Exit
             </button>

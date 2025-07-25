@@ -208,7 +208,7 @@ button:disabled {
   animation: slideUp 0.6s ease;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between; /* Push Exit button to bottom */
   align-items: center;
   gap: 30px;
   overflow-y: auto;
@@ -228,6 +228,7 @@ button:disabled {
   border: 1px solid #ccc;
   border-radius: 10px;
   background-color: #f7f7f7;
+  margin-top: 14px;
 }
 .exit-btn {
   margin-top: 20px;
