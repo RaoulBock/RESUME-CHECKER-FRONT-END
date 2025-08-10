@@ -31,10 +31,13 @@ function App() {
     setFeedback("");
 
     try {
-      const res = await axios.post("http://localhost:5000/analyze", {
-        resume,
-        role,
-      });
+      const res = await axios.post(
+        "https://resume-checker-backend-ixbn.onrender.com/analyze",
+        {
+          resume,
+          role,
+        }
+      );
 
       setFeedback(res.data.feedback);
     } catch (err) {
@@ -69,9 +72,9 @@ function App() {
         {loading ? "Analyzing..." : "Analyze Resume"}
       </button>
 
-      <button className="search-btn" onClick={() => setIsModalOpen(true)}>
+      {/* <button className="search-btn" onClick={() => setIsModalOpen(true)}>
         Search for job
-      </button>
+      </button> */}
 
       {feedback && (
         <div className="feedback">
